@@ -1,0 +1,5 @@
+# Configuration du déploiement Netlify.
+# Le plugin officiel Next.js est ajouté automatiquement par Netlify.
+[build]
+  command = "npm run build"
+  publish = ".next"

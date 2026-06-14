@@ -21,9 +21,6 @@ export default function HomePage() {
       >
         Explorer l&apos;annuaire →
       </Link>
-      <p className="mt-16 text-sm text-muted">
-        Étape 1 terminée — projet initialisé. Prochaine étape : connexion Notion.
-      </p>
     </div>
   );
 }

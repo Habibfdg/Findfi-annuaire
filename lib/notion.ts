@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// Ce fichier lit le JSON brut renvoyé par l'API Notion, dont la forme varie
+// selon le type de colonne. On utilise donc volontairement le type "any".
 import { Client } from "@notionhq/client";
 
 // On se connecte à Notion avec la clé rangée dans .env (jamais sur GitHub).
@@ -74,7 +77,7 @@ function lireMultiSelect(prop: any): string[] {
 function lireScore(prop: any): number | null {
   if (!prop) return null;
   if (prop.type === "number") return prop.number ?? null;
-  const nom = prop.select?.name ?? prop.status?.name ?? "";
+  const nom: string = prop.select?.name ?? prop.status?.name ?? "";
   if (!nom) return null;
   // Compte tout symbole "étoile" (★, ☆, ⭐, ✦…), quel que soit celui utilisé.
   const etoiles = Array.from(nom).filter(

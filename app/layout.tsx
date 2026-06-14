@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  ),
   title: "FINDFI — Annuaire des outils IA finance",
   description:
     "Nous répertorions et testons les outils IA pour la finance d'entreprise : DAF, contrôleurs de gestion, auditeurs et analystes.",
